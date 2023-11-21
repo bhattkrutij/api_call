@@ -4,5 +4,5 @@ class ImagesUtils {
   static const String imgYellowStar = "assets/images/yellowstar.png";
   static const String baseImgUrl = "https://randr.tridentinfoway.com/";
 
-  - assets/images/
+//  - assets/images/
 }

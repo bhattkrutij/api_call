@@ -16,33 +16,36 @@ class _HomeScreenState extends State<HomeScreen> {
   void initState() {
     super.initState();
     apiService = ApiService();
+    Future<bool?>? test = apiService?.getProfiles();
+    print("fdkjssssssssssssssssssssssssssssssssssss${test}");
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: FutureBuilder(
-          future: apiService?.getProfiles(),
-          builder: (context, snapshot) {
-            print(snapshot.data);
-            if (snapshot.hasData) {
-              print("get data success");
-              List<Profile>? profiles = snapshot.data;
-              return _buildListView(profiles!);
-            } else if (snapshot.hasError) {
-              print("error${snapshot.error}");
-              return Center(
-                child: Text(
-                    "Error while loading fetching Data${snapshot.error.toString()}"),
-              );
-            } else {
-              return Center(
-                child: CircularProgressIndicator(),
-              );
-            }
-          },
-        ),
+        child: Text("tetstst"),
+        // child: FutureBuilder(
+        //   future: apiService?.getProfiles(),
+        //   builder: (context, snapshot) {
+        //     print(snapshot.data);
+        //     if (snapshot.hasData) {
+        //       print("get data success");
+        //       List<Profile>? profiles = snapshot.data;
+        //       return _buildListView(profiles!);
+        //     } else if (snapshot.hasError) {
+        //       print("error${snapshot.error}");
+        //       return Center(
+        //         child: Text(
+        //             "Error while loading fetching Data${snapshot.error.toString()}"),
+        //       );
+        //     } else {
+        //       return Center(
+        //         child: CircularProgressIndicator(),
+        //       );
+        //     }
+        //   },
+        // ),
       ),
     );
   }
